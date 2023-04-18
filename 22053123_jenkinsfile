@@ -16,5 +16,35 @@ pipeline {
                 echo "22053123STG2 - Push to production web server completed"
           }	  
           }
+          stage('22053123STG3') {
+          steps {
+            input('22053123STG3:Proceed to test production web service?')
+          }
+          }	
+         stage('22053123STG4') {
+          when {
+                not {
+                    branch "testing not completed"
+                }
+          }
+          steps {
+                echo "STG4: Production web server testing completed"
+          }	 
+          }
+          stage('22053123STG5') {
+          steps {
+            input('22053123STG5:Web server testing result has been inspected')
+          }
+          }
+         stage('22053123STG6') {
+          when {
+                not {
+                    branch "production operation is not successful"
+                }
+          }
+          steps {
+                echo "22053123STG6: Production Operation is successful."
+          }	 
+          }		  
       }
 }
