@@ -14,8 +14,7 @@ pipeline {
           }
           steps {
                 echo "22053123STG2 - Push to production web server completed"
-          }
-          } 	  
+          }	  
           }
       }
 }
