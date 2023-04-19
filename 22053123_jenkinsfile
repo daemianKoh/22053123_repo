@@ -14,7 +14,7 @@ pipeline {
           }
           steps {
                  sh '''#!/bin/bash
-				 mkdir -p /tmp/22053123/clone;
+				 mkdir -p /tmp/22053123;
                  puppet resource file /tmp/22053123/clone ensure=absent force=true;
                  puppet resource file /tmp/22053123/clone ensure=directory;
                  cd /tmp/22053123/clone;
