@@ -38,6 +38,7 @@ pipeline {
                 }
           }
           steps {
+				sh 'curl –Is http://22053123-websvr.localdomain |head –n 1  > /tmp/web-test-result'
                 echo "STG4: Production web server testing completed"
           }	 
           }
